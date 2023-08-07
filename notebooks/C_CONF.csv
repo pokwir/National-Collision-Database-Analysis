@@ -1,0 +1,22 @@
+Code,Description
+01,Hit a moving object
+02,Hit a stationary object
+03,Ran off left shoulder
+04,Ran off right shoulder
+05,Rollover on roadway
+06,Any other single vehicle collision configuration
+21,Rear-end collision
+22,Side swipe
+23,"One vehicle passing to the left of the other, or left turn conflict"
+24,"One vehicle passing to the right of the other, or right turn conflict"
+25,Any other two vehicle - same direction of travel configuration
+31,Head-on collision
+32,Approaching side-swipe
+33,Left turn across opposing traffic
+34,"Right turn, including turning conflicts"
+35,Right angle collision
+36,Any other two-vehicle 
+41,Hit a parked motor vehicle
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element

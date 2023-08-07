@@ -1,0 +1,18 @@
+Code,Description
+11,Driver
+12,"Front row, center"
+13,"Front row, right outboard, including motorcycle passenger in sidecar"
+21,"Second row, left outboard, including motorcycle passenger"
+22,"Second row, center"
+23,"Second row, right outboard"
+31,"Third row, left outboard"
+32,"Third row, center"
+33,"Third row, right outboard"
+96,"Position unknown, but the person was definitely an occupant"
+97,Sitting on someone’s lap
+98,Outside passenger compartment
+99,Pedestrian
+NN,Data element is not applicable
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element

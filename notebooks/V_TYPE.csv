@@ -1,0 +1,22 @@
+Code,Description
+01,Light Duty Vehicle
+05,Panel/cargo van
+06,Other trucks and vans
+07,Unit trucks
+08,Road tractor
+09,School bus
+10,Smaller school bus
+11,Urban and Intercity Bus
+14,Motorcycle and moped
+16,Off road vehicles
+17,Bicycle
+18,Purpose-built motorhome
+19,Farm equipment
+20,Construction equipment
+21,Fire engine
+22,Snowmobile
+23,Streetcar
+NN,Data element is not applicable
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element

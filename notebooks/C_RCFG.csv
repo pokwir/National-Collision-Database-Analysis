@@ -1,0 +1,16 @@
+Code,Description
+01,Non-intersection
+02,At an intersection of at least two public roadways
+03,"Intersection with parking lot entrance/exit, private driveway or laneway"
+04,Railroad level crossing
+05,"Bridge, overpass, viaduct"
+06,Tunnel or underpass
+07,Passing or climbing lane
+08,Ramp
+09,Traffic circle
+10,Express lane of a freeway system
+11,Collector lane of a freeway system
+12,Transfer lane of a freeway system
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element

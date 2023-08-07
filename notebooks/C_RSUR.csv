@@ -1,0 +1,13 @@
+Code,Description
+1,"Dry, normal"
+2,Wet
+3,Snow
+4,"Slush, wet snow"
+5,Icy
+6,Sand/gravel/dirt
+7,Muddy
+8,Oil
+9,Flooded
+Q,Choice is other than the preceding values 
+U,Unknown
+X,Jurisdiction does not provide data element

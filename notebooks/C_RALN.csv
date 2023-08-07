@@ -1,0 +1,10 @@
+Code,Description
+1,Straight and level
+2,Straight with gradient
+3,Curved and level
+4,Curved with gradient
+5,Top of hill or gradient
+6,Bottom of hill or gradient
+Q,Choice is other than the preceding values
+U,Unknown
+X,Jurisdiction does not provide this data element

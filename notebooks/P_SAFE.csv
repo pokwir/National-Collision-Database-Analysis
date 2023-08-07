@@ -1,0 +1,12 @@
+Code,Description
+01,"No safety device used, or No child restraint used"
+02,Safety device used or child restraint used
+09,Helmet worn
+10,Reflective clothing worn
+11,Both helmet and reflective clothing used
+12,Other safety device used
+13,No safety device equipped
+NN,Data element is not applicable
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element

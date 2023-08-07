@@ -1,0 +1,7 @@
+Code,Description
+1,No Injury
+2,Injury
+3,Fatality
+N,Data element is not applicable 
+U,Unknown
+X,Jurisdiction does not provide this data element

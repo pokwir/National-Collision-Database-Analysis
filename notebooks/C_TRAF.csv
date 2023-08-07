@@ -1,0 +1,22 @@
+Code,Description
+01,Traffic signals fully operational 
+02,Traffic signals in flashing mode 
+03,Stop sign
+04,Yield sign
+05,Warning sign
+06,Pedestrian crosswalk
+07,Police officer
+08,"School guard, flagman"
+09,School crossing
+10,Reduced speed zone
+11,No passing zone sign
+12,Markings on the road
+13,School bus stopped with school bus signal lights flashing 
+14,School bus stopped with school bus signal lights not flashing 
+15,"Railway crossing with signals, or signals and gates"
+16,Railway crossing with signs only
+17,Control device not specified
+18,No control present
+QQ,Choice is other than the preceding values
+UU,Unknown
+XX,Jurisdiction does not provide this data element
