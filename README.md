@@ -82,7 +82,8 @@ Collision Proportion: 22.15%
 
 ![Alt text](images/gender-age-collision.png)
 
-**Observations**
+**Observations**\
+
 Generally, there isn't a significant difference in collision proportions between males and females across different age groups. The proportion values between the two genders are relatively close for most age categories. There isn't a solid or consistent pattern indicating a significant difference in collision rates based solely on gender or age.
 
 The age group "15-24" has the most significant difference in collision proportions between males and females, with a slightly higher ratio for females. This suggests that young adult females are more likely to be involved in collisions than their male counterparts.
@@ -193,7 +194,7 @@ Safety Device: 'Reflective clothing', Fatality Rate: 12.66%
 
 ![Alt text](images/fatality-rate-safety-device.png)
 
-**Observations**\
+**Observations**
 
 It can be inferred that overall physical protective safety devices like helmets tend to reduce fatality in a collision. In contrast, preventive safety devices like reflective clothing may not have the same impact in reducing fatality rates in the event of a crash.
 
