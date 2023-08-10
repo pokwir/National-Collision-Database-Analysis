@@ -47,6 +47,7 @@ Ananalysis of the dataset was performed in Python using the Pandas, Numpy, and g
 2.5 Use the previous charts/reports and perform additional ad hoc analysis of the dataset to outline the key contributing factors to Canadian collisions.
 
 ### 2.1 What age range and which sex are more likely to be associated with a collision?
+
 Since the dataset and data dictionary didnt have the age group classification structure, I adopted government of Canada structure that can be found [here](https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=252430)
 
 ```sql
@@ -60,6 +61,7 @@ Since the dataset and data dictionary didnt have the age group classification st
 |  6   |    65 - 74 years         |
 |  7   |    75 years and over     |
 ```
+
 ```python
 age_ranges = [(0, 14), (15, 24), (25, 34), (35, 44), (45, 54), (55, 64), (65, 74), (75, 100)]
 age_range_labels = ['0-14', '15-24', '25-34', '35-44', '45-54', '55-64', '65-74', '75+']
@@ -82,13 +84,14 @@ Collision Proportion: 22.15%
 
 ![Alt text](images/gender-age-collision.png)
 
-**Observations**\
+**Observations**
 
 Generally, there isn't a significant difference in collision proportions between males and females across different age groups. The proportion values between the two genders are relatively close for most age categories. There isn't a solid or consistent pattern indicating a significant difference in collision rates based solely on gender or age.
 
 The age group "15-24" has the most significant difference in collision proportions between males and females, with a slightly higher ratio for females. This suggests that young adult females are more likely to be involved in collisions than their male counterparts.
 
 **Is the test statistically significant?**
+
 ```python
 contingency_table = collision_counts.values
 
@@ -106,6 +109,7 @@ print(f"P-Value: {p:.4f}")
 print(f"Degrees of Freedom: {dof}")
 print(f"Is the result statistically significant? {'Yes' if is_significant else 'No'}")
 ```
+
 ```yaml
 Chi-Square Test Results:
 Chi-Square Value: 243.8529
@@ -119,6 +123,7 @@ The result suggests that certain age ranges and sexes are more likely to be asso
 <br>
 
 ### 2.2 What time(s) of days are most associated with a relatively high fatality rate?
+
 In analyzing the fatality rate, the subset of records with a fatality of three is divided by all collisions and expressed as a percentage. The following chart shows the fatality rate by time of day.
 
 ```python
@@ -138,13 +143,14 @@ Hour: 3.0, Fatality Rate: 2.82%
 
 ![Alt text](images/fatality_rate_hour.png)
 
-**Observations**\
+**Observations**
 
 The fatality rate of collisions tends to have higher values during the early morning hours (around 3 am) and late evening hours (around 8 pm to 11 pm). These times show slightly higher fatalities compared to other hours of the day. This suggests that collisions during these periods are more likely to result in fatalities.
 
 The period with the highest fatalities is between 1 am and 4 am, with the peak occurring at 3 am (2.82%). The lowest rates appear during the daytime between 8 am (0.4%) and 5 pm (0.39%), followed by a five-fold increase between 5 pm and midnight.
 
 ### 2.3 What type(s) of weather are most associated with a relatively high fatality rate?
+
 In analyzing the fatality rate by weather type, the subset of records with a fatality (3) divided by all collisions aggregated by weather type and expressed as a percentage. The following chart shows the fatality rate by weather type.
 
 ```python
@@ -162,13 +168,14 @@ Weather: Sand/gravel, Fatality Rate: 1.15%
 
 ![Alt text](images/fatality-rate-weather.png)
 
-**Observations**\
+**Observations**
 
 The fatality rates of collisions vary across different weather conditions. The highest fatality rate is associated with "Sand/gravel," followed by "Unknown" and "other" weather conditions. "Icy" and "Muddy" conditions have relatively lower fatality rates than others.
 
 Overall, adverse weather conditions, such as "Sand/gravel," "Unknown," and "other," pose a higher risk of fatal collisions. Conversely, weather conditions like "Dry," "Wet," "Snow," and "slush" have moderate fatality rates. Considering these trends when evaluating road safety measures and strategies is essential.
 
 ### 2.4 What is the effect of using a Safety device on the fatality rate?
+
 In analyzing the fatality rate by a safety device, the subset of records with a fatality (3) divided by all collisions aggregated by the safety device. The following chart shows the fatality rate by safety device.
 
 ```python
@@ -200,9 +207,10 @@ It can be inferred that overall physical protective safety devices like helmets 
 
 Collisions where safety devices were used, have the lowest fatality rate, indicating that the use of safety devices is associated with a lower risk of fatal outcomes.
 
-Collisions involving individuals wearing reflective clothing have the highest fatality rate. Reflective clothing enhances visibility and might not provide physical protection during a collision. 
+Collisions involving individuals wearing reflective clothing have the highest fatality rate. Reflective clothing enhances visibility and might not provide physical protection during a collision.
 
 **Is the test statistically significant?**
+
 ```python
 contingency_table = pd.crosstab(df['P_SAFE'], df['P_ISEV'] == 3)
 
@@ -216,6 +224,7 @@ print(f"P-Value: {p:.4f}")
 print(f"Degrees of Freedom: {dof}")
 print("Is the result statistically significant? " + ("Yes" if p < 0.05 else "No"))
 ```
+
 ```yaml
 Chi-Square Test Results:
 - Chi-Square Value: 2956.0980
@@ -223,12 +232,13 @@ Chi-Square Test Results:
 - Degrees of Freedom: 8
 - Is the result statistically significant? Yes
 ```
+
 The statistically significant p-value indicates that there is a strong association between the use of a safety device and the fatality rate. The data provides evidence that the use of safety devices is not independent of the fatality rate in collisions.
 
-
-### 2.5 Use the previous charts/reports and perform additional ad hoc analysis of the dataset to outline the key contributing factors to Canadian collisions.
+### 2.5 Use the previous charts/reports and perform additional ad hoc analysis of the dataset to outline the key contributing factors to Canadian collisions
 
 >> #### 2.5.1 Road Alignment & Collision Configuration
+
 I investigated road alignment and collision configuration to determine if there is a relationship between these factors and the number of collisions. The following chart shows the collision configuration by road alignment.
 
 ```python
@@ -256,7 +266,7 @@ for i in range(0,4):
 
 ![Alt text](images/Collision-config.png)
 
-**Observations**\
+**Observations**
 
 Most collision for one car accident is hitting a stationary object, followed closely by right and left roll onto the shoulder.
 
@@ -309,10 +319,10 @@ grouped_df.head(10)
 
 ![Alt text](images/Fatality_rate_v_config.png)
 
-**Observations**\
+**Observations**
 
 **High fatality:** Certain combinations of vehicle types and collision configurations exhibit notably higher fatality rates. For instance, combinations like snowmobiles involved in a collision while in a left turn across opposing traffic (22-33) result in 60% fatality, and snowmobiles involved in a crash with any other two-vehicle (22-36) result in 50% fatality.
 
-**Low fatality:** There is a diversity of fatality rates across different vehicle types and collision configurations. Smaller school buses (10), purpose-built motorhomes (18), and fire engines (21) have zero fatality. This indicates that these vehicles are generally safer. 
+**Low fatality:** There is a diversity of fatality rates across different vehicle types and collision configurations. Smaller school buses (10), purpose-built motorhomes (18), and fire engines (21) have zero fatality. This indicates that these vehicles are generally safer.
 
 The fatality rates vary significantly between vehicle types and collision configurations. The trends observed may suggest potential factors contributing to higher or lower fatality rates, but further analysis and domain knowledge would be needed to draw more definitive conclusions.
