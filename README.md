@@ -2,7 +2,7 @@
 
 ---
 
-This repo contains my work on identifying data issues in the 2017 Canadian Collisions dataset, my recommendations, and my analysis of contributing factors to collisions.
+This repo contains my work on identifying data issues in the 2017 Canadian Collisions dataset, my recommendations for improving data quality, and my analysis of contributing factors to collisions. Where relevant, additional statistical tests are provided to support the findings.
 
 ## Introduction
 
@@ -39,11 +39,11 @@ The following recommendations are essential to improve the quality of the datase
 
 ## 2. Analysis
 
-Ananalysis of the dataset was performed in Python using the Pandas, Numpy, and ggplot libraries. The code notebook can be found **here.** The analysis focused on answering the following questions:
-2.1. What age range and which sex are more likely to be associated with a collision?
-2.2 What time(s) of days are most associated with a relatively high fatality rate?
-2.3 What type(s) of weather are most associated with a relatively high fatality rate?
-2.4 What is the effect of using a Safety device on the fatality rate?
+Ananalysis of the dataset was performed in Python using the Pandas, Numpy, and ggplot libraries. The code notebook can be found [**here.**](notebooks/) The analysis focused on answering the following questions:\
+2.1. What age range and which sex are more likely to be associated with a collision?\
+2.2 What time(s) of days are most associated with a relatively high fatality rate?\
+2.3 What type(s) of weather are most associated with a relatively high fatality rate?\
+2.4 What is the effect of using a Safety device on the fatality rate?\
 2.5 Use the previous charts/reports and perform additional ad hoc analysis of the dataset to outline the key contributing factors to Canadian collisions.
 
 ### 2.1 What age range and which sex are more likely to be associated with a collision?
@@ -86,6 +86,35 @@ Collision Proportion: 22.15%
 Generally, there isn't a significant difference in collision proportions between males and females across different age groups. The proportion values between the two genders are relatively close for most age categories. There isn't a solid or consistent pattern indicating a significant difference in collision rates based solely on gender or age.
 
 The age group "15-24" has the most significant difference in collision proportions between males and females, with a slightly higher ratio for females. This suggests that young adult females are more likely to be involved in collisions than their male counterparts.
+
+**Is the test statistically significant?**
+```python
+contingency_table = collision_counts.values
+
+# Perform the chi-square test
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+# Determine if the result is statistically significant (using a significance level of 0.05)
+alpha = 0.05
+is_significant = p < alpha
+
+# Print the chi-square test results
+print("Chi-Square Test Results:")
+print(f"Chi-Square Value: {chi2:.4f}")
+print(f"P-Value: {p:.4f}")
+print(f"Degrees of Freedom: {dof}")
+print(f"Is the result statistically significant? {'Yes' if is_significant else 'No'}")
+```
+```yaml
+Chi-Square Test Results:
+Chi-Square Value: 243.8529
+P-Value: 0.0000
+Degrees of Freedom: 7
+Is the result statistically significant? Yes
+```
+
+The result suggests that certain age ranges and sexes are more likely to be associated with collisions compared to what would be expected by random chance. This finding has practical implications for understanding the factors that contribute to collisions and may guide targeted safety measures or interventions based on age and sex demographics
+
 <br>
 
 ### 2.2 What time(s) of days are most associated with a relatively high fatality rate?
@@ -169,6 +198,29 @@ It can be inferred that overall physical protective safety devices like helmets 
 Collisions where safety devices were used, have the lowest fatality rate, indicating that the use of safety devices is associated with a lower risk of fatal outcomes.
 
 Collisions involving individuals wearing reflective clothing have the highest fatality rate. Reflective clothing enhances visibility and might not provide physical protection during a collision. 
+
+**Is the test statistically significant?**
+```python
+contingency_table = pd.crosstab(df['P_SAFE'], df['P_ISEV'] == 3)
+
+# Conduct the chi-square test
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+# Interpret the results
+print("Chi-Square Test Results:")
+print(f"Chi-Square Value: {chi2:.4f}")
+print(f"P-Value: {p:.4f}")
+print(f"Degrees of Freedom: {dof}")
+print("Is the result statistically significant? " + ("Yes" if p < 0.05 else "No"))
+```
+```yaml
+Chi-Square Test Results:
+- Chi-Square Value: 2956.0980
+- P-Value: 0.0000
+- Degrees of Freedom: 8
+- Is the result statistically significant? Yes
+```
+The statistically significant p-value indicates that there is a strong association between the use of a safety device and the fatality rate. The data provides evidence that the use of safety devices is not independent of the fatality rate in collisions.
 
 
 ### 2.5 Use the previous charts/reports and perform additional ad hoc analysis of the dataset to outline the key contributing factors to Canadian collisions.
@@ -254,9 +306,9 @@ grouped_df.head(10)
 
 ![Alt text](images/Fatality_rate_v_config.png)
 
-**Observations**
+**Observations**\
 **High fatality:** Certain combinations of vehicle types and collision configurations exhibit notably higher fatality rates. For instance, combinations like snowmobiles involved in a collision while in a left turn across opposing traffic (22-33) result in 60% fatality, and snowmobiles involved in a crash with any other two-vehicle (22-36) result in 50% fatality.
 
-**Low fatality:** There is a diversity of fatality rates across different vehicle types and collision configurations. Smaller school buses (10), purpose-built motorhomes (18), and fire engines have zero fatality. This indicates that these vehicles are generally safer. 
+**Low fatality:** There is a diversity of fatality rates across different vehicle types and collision configurations. Smaller school buses (10), purpose-built motorhomes (18), and fire engines (21) have zero fatality. This indicates that these vehicles are generally safer. 
 
 The fatality rates vary significantly between vehicle types and collision configurations. The trends observed may suggest potential factors contributing to higher or lower fatality rates, but further analysis and domain knowledge would be needed to draw more definitive conclusions.
