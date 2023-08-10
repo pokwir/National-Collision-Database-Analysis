@@ -137,7 +137,8 @@ Hour: 3.0, Fatality Rate: 2.82%
 
 ![Alt text](images/fatality_rate_hour.png)
 
-**Observations**
+**Observations**\
+
 The fatality rate of collisions tends to have higher values during the early morning hours (around 3 am) and late evening hours (around 8 pm to 11 pm). These times show slightly higher fatalities compared to other hours of the day. This suggests that collisions during these periods are more likely to result in fatalities.
 
 The period with the highest fatalities is between 1 am and 4 am, with the peak occurring at 3 am (2.82%). The lowest rates appear during the daytime between 8 am (0.4%) and 5 pm (0.39%), followed by a five-fold increase between 5 pm and midnight.
@@ -160,7 +161,7 @@ Weather: Sand/gravel, Fatality Rate: 1.15%
 
 ![Alt text](images/fatality-rate-weather.png)
 
-**Observations**
+**Observations**\
 
 The fatality rates of collisions vary across different weather conditions. The highest fatality rate is associated with "Sand/gravel," followed by "Unknown" and "other" weather conditions. "Icy" and "Muddy" conditions have relatively lower fatality rates than others.
 
@@ -192,7 +193,8 @@ Safety Device: 'Reflective clothing', Fatality Rate: 12.66%
 
 ![Alt text](images/fatality-rate-safety-device.png)
 
-**Observations**
+**Observations**\
+
 It can be inferred that overall physical protective safety devices like helmets tend to reduce fatality in a collision. In contrast, preventive safety devices like reflective clothing may not have the same impact in reducing fatality rates in the event of a crash.
 
 Collisions where safety devices were used, have the lowest fatality rate, indicating that the use of safety devices is associated with a lower risk of fatal outcomes.
@@ -253,7 +255,7 @@ for i in range(0,4):
 
 ![Alt text](images/Collision-config.png)
 
-**Observations**
+**Observations**\
 
 Most collision for one car accident is hitting a stationary object, followed closely by right and left roll onto the shoulder.
 
@@ -307,6 +309,7 @@ grouped_df.head(10)
 ![Alt text](images/Fatality_rate_v_config.png)
 
 **Observations**\
+
 **High fatality:** Certain combinations of vehicle types and collision configurations exhibit notably higher fatality rates. For instance, combinations like snowmobiles involved in a collision while in a left turn across opposing traffic (22-33) result in 60% fatality, and snowmobiles involved in a crash with any other two-vehicle (22-36) result in 50% fatality.
 
 **Low fatality:** There is a diversity of fatality rates across different vehicle types and collision configurations. Smaller school buses (10), purpose-built motorhomes (18), and fire engines (21) have zero fatality. This indicates that these vehicles are generally safer. 
